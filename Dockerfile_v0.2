@@ -90,9 +90,13 @@ RUN eget d3mondev/puredns --to /usr/local/bin
 
 RUN git clone https://github.com/0xjbb/static-nmap.git /static-nmap && chmod +x /static-nmap/nmap
 
-RUN  curl -o /function/resolvers.txt -LO https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
+RUN curl -o /function/resolvers.txt -LO https://raw.githubusercontent.com/janmasarik/resolvers/master/resolvers.txt
 
 RUN git clone https://github.com/projectdiscovery/nuclei-templates /nuclei-templates
+
+RUN eget https://nodejs.org/dist/latest-v22.x/node-v22.3.0-linux-x64.tar.gz -f node --to /usr/local/bin
+
+
 
 COPY ./bins/massdns /usr/local/bin/massdns
 
