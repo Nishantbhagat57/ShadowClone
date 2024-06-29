@@ -94,7 +94,7 @@ RUN curl -o /function/resolvers.txt -LO https://raw.githubusercontent.com/janmas
 
 RUN git clone https://github.com/projectdiscovery/nuclei-templates /nuclei-templates
 
-RUN eget https://nodejs.org/dist/latest-v22.x/node-v22.3.0-linux-x64.tar.gz -f node --to /usr/local/bin
+RUN eget https://nodejs.org/dist/latest-v22.x/node-v22.3.0-linux-x64.tar.gz -f node-v22.3.0-linux-x64 -k --to /usr/local/bin
 
 
 
