@@ -100,8 +100,9 @@ RUN tar -xvf go1.22.3.linux-amd64.tar.gz
 RUN rm go1.22.3.linux-amd64.tar.gz
 RUN mv go /usr/local
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-RUN nvm install 20
+RUN wget https://nodejs.org/dist/latest/node-v22.4.0-linux-x64.tar.gz
+RUN tar -xvf node-v22.4.0-linux-x64.tar.gz
+RUN cp -r node-v22.4.0-linux-x64/{bin,include,lib,share} /usr
 
 RUN apt-get update
 RUN apt-get install -y git gcc make libpcap-dev
