@@ -102,7 +102,10 @@ RUN mv go /usr/local
 
 RUN wget https://nodejs.org/dist/latest/node-v22.4.0-linux-x64.tar.gz
 RUN tar -xvf node-v22.4.0-linux-x64.tar.gz
-RUN cp -r node-v22.4.0-linux-x64/{bin,include,lib,share} /usr
+RUN cp -r node-v22.4.0-linux-x64/bin /usr
+RUN cp -r node-v22.4.0-linux-x64/share /usr
+RUN cp -r node-v22.4.0-linux-x64/include /usr
+RUN cp -r node-v22.4.0-linux-x64/lib /usr
 
 RUN apt-get update
 RUN apt-get install -y git gcc make libpcap-dev
