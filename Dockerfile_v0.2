@@ -113,6 +113,11 @@ RUN git clone https://github.com/robertdavidgraham/masscan && chmod 777 masscan/
 RUN cp masscan/bin/masscan /usr/local/bin/masscan
 RUN cp masscan/bin/masscan /usr/local/masscan
 
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+RUN git clone https://github.com/RustScan/RustScan.git && cd RustScan && cargo build --release
+RUN cp RustScan/release/rustscan /usr/local/rustscan
+RUN cp RustScan/release/rustscan /usr/local/bin/rustscan
+
 COPY ./bins/massdns /usr/local/bin/massdns
 
 COPY ./bins/fff /usr/local/bin/fff
